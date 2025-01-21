@@ -1,0 +1,23 @@
+
+  {
+    "manifest_version": 3,
+    "name": "Skribbl Player Tracker",
+    "description": "Monitor new players and player departures in Skribbl.io",
+    "version": "1.0.0",
+    "permissions": ["webNavigation", "storage", "notifications","activeTab","tabs","scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://skribbl.io/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": [
+      "https://skribbl.io/*"
+    ],
+    "action": {
+      "default_icon": {}
+    }
+  }
